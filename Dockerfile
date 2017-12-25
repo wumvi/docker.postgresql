@@ -1,4 +1,4 @@
-FROM wumvi/php
+FROM debian:jessie
 MAINTAINER Vitaliy Kozlenko <vk@wumvi.com>
 
 ADD lib-utils  /

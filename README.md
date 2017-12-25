@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/wumvi/postgresql.svg?branch=master)](https://travis-ci.org/wumvi/postgresql)
+
 ##
 Postgresql База данных с extension:
 
