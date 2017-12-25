@@ -13,7 +13,7 @@ after_success:
   - docker --version
   - echo "Travis commit is $TRAVIS_COMMIT"
   - echo "Travis Build Number is $TRAVIS_BUILD_NUMBER"
-  - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+  - echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
   - docker push $REPO:$TAG
 
 after_script:
