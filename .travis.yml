@@ -4,13 +4,4 @@ services: docker
 
 script:
   - docker --version
-  - echo "Travis commit is $TRAVIS_COMMIT"
-  - echo "Travis Build Number is $TRAVIS_BUILD_NUMBER"
-  - export REPO=wumvi/db.prod
-  - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
-  - docker build -f Dockerfile -t $REPO:$TAG .
-  - echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
-  - docker push $REPO:$TAG
-
-after_script:
-  - docker logout
+  - docker build -f Dockerfile .
