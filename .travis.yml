@@ -2,7 +2,6 @@ sudo: required
 language: bash
 services: docker
 
-install: true
 
 script:
   - export REPO=wumvi/db.prod
