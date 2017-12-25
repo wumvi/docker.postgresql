@@ -7,11 +7,20 @@ pg_cron https://github.com/citusdata/pg_cron
 
 pg_stat_statements
 
-# Сборка
+## Build
 
 ```
 docker build -t wumvi/db.prod:v10 -f Dockerfile .
 ```
+
+## Run
+```
+docker run --restart=always --rm -d -v db.prod:/data -v /tmp/db/:/tmp/ --name=db.prod --hostname=db.prod.master --net=prod.net wumvi/db.prod:v10
+```
+
+## Порты
+
+Порт 5432 - для подключений к БД 
 
 ## Переменные
 
