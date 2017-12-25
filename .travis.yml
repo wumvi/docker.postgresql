@@ -6,7 +6,7 @@ script:
   - docker --version
   - echo "Travis commit is $TRAVIS_COMMIT"
   - echo "Travis Build Number is $TRAVIS_BUILD_NUMBER"
-  - export REPO=sebestblog/travis-demo
+  - export REPO=wumvi/db.prod
   - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
   - docker build -f Dockerfile -t $REPO:$COMMIT .
   - docker tag $REPO:$COMMIT $REPO:$TAG
