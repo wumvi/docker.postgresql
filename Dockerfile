@@ -1,4 +1,4 @@
-FROM debian:stretch
+FROM debian:9.3
 MAINTAINER Vitaliy Kozlenko <vk@wumvi.com>
 
 ADD lib-utils  /
@@ -22,6 +22,7 @@ RUN DEBIAN_FRONTEND=noninteractive && \
     echo "host    all    all    0.0.0.0/0    md5" >> /data/pg_hba.conf && \
     chmod a+x /start.sh && \
     export PATH=/opt/pgpro/std-10/bin/:$PATH && \
+    cp /bin/mkdir /usr/bin/mkdir && \
     mkdir /soft/ && \
     cd /soft/ && \
     git clone https://github.com/citusdata/pg_cron.git && \
